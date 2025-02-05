@@ -1,0 +1,103 @@
+.black-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.left-image {
+  position: absolute;
+  left: 20px; /* Keep it on the left side */
+}
+
+.static-image {
+  width: 150px; /* Adjust width */
+  height: 300px; /* Adjust height */
+  border-radius: 10px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Arrange images in a column */
+  gap: 20px;
+}
+
+.touchable-image {
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer; /* Makes it clear they are clickable */
+}
+.black-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 550vh;
+  background-color: black;
+}
+
+.left-image {
+  position: absolute;
+  left: 20px; /* Keep it on the left side */
+}
+.right-image {
+  position: absolute;
+  right: 30px; /* Keep it on the left side */
+}
+.static-image {
+  width: 150px; /* Adjust width */
+  height: 150px; /* Adjust height */
+  border-radius: 10px;
+  margin-left: 300px;
+  margin-top: 300%;
+}
+.static-image2 {
+  width: 200px; /* Adjust width */
+  height: 180px; /* Adjust height */
+  border-radius: 10px;
+  margin-right: 300px;
+  margin-top: -100%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column; /* Arrange images in a column */
+  gap: 0px;
+}
+
+.touchable-image1 {
+  width: 700px;
+  height: 500px;
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer; /* Makes it clear they are clickable */
+}
+.touchable-image2 {
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer; /* Makes it clear they are clickable */
+}
+.touchable-image3 {
+  margin-top: 8%;
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer; /* Makes it clear they are clickable */
+}
+.image-text {
+  color: white;
+  margin-left: 40%;
+  font-size: 24px;
+  margin-top: 5px; /* Small gap between image and text */
+}
+.image-text1 {
+  color: white;
+  margin-left: 40%;
+  font-size: 24px;
+  margin-top: 20px; /* Small gap between image and text */
+}

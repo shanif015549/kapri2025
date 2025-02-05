@@ -1,0 +1,79 @@
+
+body{
+    font-family: arial,helvetica;
+}
+
+h1{
+    font-size: 6em;
+    font-size: calc(2em + 2vw);
+    margin: 0;
+}
+
+.intro p{
+    font-size: calc(0.75em + 1vw);
+}
+
+.section{
+    padding: 5vh 0;
+    color: #fff;
+    text-align:center;
+}
+
+iframe{
+    max-width: 37vw;
+    max-height: 65vh;
+}
+
+video,
+img{
+    max-width: 42vw;
+    max-height: 35vh;
+}
+
+/* Overwriting styles for the navigation dots */
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span{
+    background: white;
+}
+
+/* Overwriting navigation arrows for slides */
+.fp-prev {
+    margin-left: 3%;
+}
+
+.fp-next {
+    margin-right: 3%;
+}
+
+/* Backgrounds colors for sections */
+.fp-section:nth-child(1){
+    background-image: linear-gradient(128deg,#40afff,#3f61ff);
+}
+
+.fp-section:nth-child(2){
+    background-image: linear-gradient(128deg,#ff9a3f,#ff4b40);
+}
+
+.fp-section:nth-child(3){
+    background-image: linear-gradient(128deg,#fc40ff,#543fff);
+}
+
+
+/* Styling Section 1 */
+#section1 .fp-overflow{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    padding: 0 10vw;
+    text-align: left;
+}
+#section1 iframe{
+    margin-top: 2em;
+}
+#section1 .column {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}

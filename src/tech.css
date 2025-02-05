@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Set background color to black */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    text-align: center;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-size: 6em;
+    font-size: calc(2em + 2vw);
+    margin: 0;
+    text-shadow: 0px 0 17px rgba(0, 0, 0, 0.8);
+}
+
+/* Backgrounds will cover all the section */
+.section,
+.slide {
+    /* Important! Videos use absolute */
+    position: relative;
+    background-size: cover;
+    /* Making sure videos won't overflow */
+    overflow: hidden;
+}
+
+.overlay-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    color: black;
+    background-color: black; /* in case the video doesn't fit the whole page */
+    background-position: center center;
+    background-size: contain;
+    object-fit: fill; /* cover video background */
+    z-index: -100;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Layer with position absolute in order to have it over the video */
+#section0 .layer {
+    /*
+    * Preventing flicker on some browsers
+    * See http://stackoverflow.com/a/36671466/1081396  or issue #183
+    */
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* Overwriting styles for the navigation dots */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: rgb(0, 0, 0);
+}
+
+.slow-scroll {
+    height: 1000vh; /* Increase page height to force scrolling */
+    transform: scaleY(0.05); /* Makes scrolling appear slower */
+}

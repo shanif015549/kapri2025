@@ -51,7 +51,7 @@ const EventDescriptionPage = () => {
           </p>
           {/* Google Form Link */}
           <div style={{ textAlign: 'center' }}>
-            <a href="https://your-google-form-link.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://forms.gle/SB2kxDu6iqmWqUF6A" target="_blank" rel="noopener noreferrer">
               <button
                 style={{
                   padding: '10px 20px',
@@ -69,7 +69,7 @@ const EventDescriptionPage = () => {
           </div>
         </>
       ),
-      googleFormLink: "https://your-google-form-link.com"
+      googleFormLink: "https://forms.gle/SB2kxDu6iqmWqUF6A"
     },
     {
       src: img2,
@@ -273,7 +273,7 @@ const EventDescriptionPage = () => {
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h1>{`Event ${parseInt(id) + 1} Details`}</h1>
-      <img src={event.src} alt={`Event ${parseInt(id) + 1}`} style={{ width: '100%', maxWidth: '600px' }} />
+      {/* <img src={event.src} alt={`Event ${parseInt(id) + 1}`} style={{ width: '100%', maxWidth: '600px' }} /> */}
       <div>{event.description}</div>
     </div>
   );

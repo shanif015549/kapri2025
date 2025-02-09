@@ -63,7 +63,7 @@ const TechEventPage = () => {
 
   return (
     <div className="app">
-      <h1 className="heading">Tech Events</h1>
+      <h1 className="heading">click to register</h1>
       <div className="image-list">
         {images.map((image, index) => (
           <div key={index} className="image-item">

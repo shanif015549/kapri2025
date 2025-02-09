@@ -1,103 +1,89 @@
+/* Fullscreen black background */
 .black-screen {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  height: 200vh; /* Tall page */
+  overflow: hidden;
   background-color: black;
+  position: relative;
 }
 
-.left-image {
+/* Heading Image at Top Left */
+.heading-container {
   position: absolute;
-  left: 20px; /* Keep it on the left side */
+  top: 200px;
+  left: 20px;
 }
 
-.static-image {
-  width: 150px; /* Adjust width */
-  height: 300px; /* Adjust height */
-  border-radius: 10px;
+.heading-image {
+  width: 1200px; /* Large size for desktop */
+  height: auto;
 }
 
+/* Container for images */
 .image-container {
   display: flex;
-  flex-direction: column; /* Arrange images in a column */
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between images */
+  padding-top: 400px; /* Moves the container further down */
+  margin-top: 30px;
 }
 
+/* Common styling for images */
 .touchable-image {
-  width: 200px;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-  cursor: pointer; /* Makes it clear they are clickable */
-}
-.black-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 550vh;
-  background-color: black;
-}
-
-.left-image {
-  position: absolute;
-  left: 20px; /* Keep it on the left side */
-}
-.right-image {
-  position: absolute;
-  right: 30px; /* Keep it on the left side */
-}
-.static-image {
-  width: 150px; /* Adjust width */
-  height: 150px; /* Adjust height */
-  border-radius: 10px;
-  margin-left: 300px;
-  margin-top: 300%;
-}
-.static-image2 {
-  width: 200px; /* Adjust width */
-  height: 180px; /* Adjust height */
-  border-radius: 10px;
-  margin-right: 300px;
-  margin-top: -100%;
-}
-
-.image-container {
-  display: flex;
-  flex-direction: column; /* Arrange images in a column */
-  gap: 0px;
-}
-
-.touchable-image1 {
-  width: 700px;
-  height: 500px;
-  border-radius: 10px;
-  object-fit: contain;
-  cursor: pointer; /* Makes it clear they are clickable */
-}
-.touchable-image2 {
-  width: 700px;
+  width: 600px;
   height: 400px;
   border-radius: 10px;
   object-fit: contain;
-  cursor: pointer; /* Makes it clear they are clickable */
+  cursor: pointer;
 }
-.touchable-image3 {
-  margin-top: 8%;
-  width: 700px;
-  height: 400px;
-  border-radius: 10px;
-  object-fit: contain;
-  cursor: pointer; /* Makes it clear they are clickable */
-}
+
+/* Image labels */
 .image-text {
   color: white;
-  margin-left: 40%;
-  font-size: 24px;
-  margin-top: 5px; /* Small gap between image and text */
+  font-size: 22px;
+  text-align: center;
+  margin-top: 5px;
 }
-.image-text1 {
-  color: white;
-  margin-left: 40%;
-  font-size: 24px;
-  margin-top: 20px; /* Small gap between image and text */
+
+/* ======== Responsive Styles for Mobile ======== */
+@media (max-width: 768px) {
+
+  .black-screen {
+    height: 200vh; /* Reduce height */
+  }
+
+
+  /* Move the heading image down and reduce its size */
+  .heading-container {
+    position: relative;
+    top: 100px; /* Move the heading image down */
+    left: 0;
+    text-align: center; /* Center it on mobile */
+    width: 100%;
+  }
+
+  .heading-image {
+    width: 500px;
+    margin-top: 300px; /* Smaller heading for mobile */
+  }
+
+  /* Decrease image container size */
+  .image-container {
+    padding-top: 200px; /* Less space above images */
+    gap: 10px; /* Reduce spacing between images */
+    margin-left: 20px;
+  }
+
+  .touchable-image {
+    width: 90%; /* Make images responsive */
+    height: auto;
+    max-height: 250px; /* Reduce height */
+  }
+
+  .image-text {
+    font-size: 18px; /* Slightly smaller text */
+  }
 }

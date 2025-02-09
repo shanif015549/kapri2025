@@ -1,36 +1,53 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // for React Router navigation
 import "./black.css";
 import image1 from './images/pic1.png';
 import image2 from './images/pic2.png';
 import image3 from './images/pic3.png';
-// import image4 from './images/line1.jpg';
-// import image5 from './images/line2.jpg'; // New image for the bottom-right corner
+import headingImage from './images/head.png'; // Ensure the correct path
 
 function Black() {
+  const navigate = useNavigate();
+
+  // Handler function for image clicks
+  const handleImageClick = (imageName) => {
+    if (imageName === 'Tech Events') {
+      // Navigate to Tech Event Page (using React Router)
+      navigate('/techevent');
+    } else {
+      // Alternatively, scroll to a specific section in the page
+      if (imageName === 'Cultural Events') {
+        document.getElementById('culture-section').scrollIntoView({ behavior: 'smooth' });
+      } else if (imageName === 'Others') {
+        document.getElementById('other-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className="black-screen">
-      {/* Static Image on Left */}
-     
-      {/* Column of Touchable Images with Text */}
+      {/* Heading Image - Positioned at the Top Left */}
+      <div className="heading-container">
+        <img src={headingImage} alt="Heading" className="heading-image" />
+      </div>
+
+      {/* Images Arranged Vertically */}
       <div className="image-container">
-        <div className="image-wrapper">
-          <img src={image1} alt="Tech Events" className="touchable-image1" />
-          <p className="image-text1">Tech Events</p>
+        <div className="image-wrapper" onClick={() => handleImageClick('Tech Events')}>
+          <img src={image1} alt="Tech Events" className="touchable-image" />
+          <p className="image-text">Tech Events</p>
         </div>
 
-        <div className="image-wrapper">
-          <img src={image2} alt="Cultural Events" className="touchable-image2" />
+        <div className="image-wrapper" onClick={() => handleImageClick('Cultural Events')}>
+          <img src={image2} alt="Cultural Events" className="touchable-image" />
           <p className="image-text">Cultural Events</p>
         </div>
 
-        <div className="image-wrapper">
-          <img src={image3} alt="Others" className="touchable-image3" />
+        <div className="image-wrapper" onClick={() => handleImageClick('Others')}>
+          <img src={image3} alt="Others" className="touchable-image" />
           <p className="image-text">Others</p>
         </div>
       </div>
-
-      {/* Image on Right Bottom */}
-     
     </div>
   );
 }

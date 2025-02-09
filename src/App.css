@@ -1,5 +1,11 @@
+
+
 .App {
   text-align: center;
+  
+}
+body {
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -40,5 +46,27 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+/* Default (Desktop) */
+#zoom-in h2 {
+  font-size: 8rem;
+  position: relative; /* Add relative positioning for custom left/right adjustments */
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+  #zoom-in h2 {
+    font-size: 6rem;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  #zoom-in h2 {
+    font-size: 1rem;
+    left: 0%;  /* Move the text to the right */
+    /* Or use transform to shift the text */
+    transform: translateX(20%); /* You can adjust the value here for more or less movement */
   }
 }

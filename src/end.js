@@ -1,25 +1,19 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
 import "./end.css"; // Import the external CSS file
-
-const SocialBox = () => {
+import image from "./images/kmealogo.png";
+const EndingBox = () => {
   return (
-    <div className="social-box">
-      {/* Instagram Button */}
-      <button className="instagram-btn">
-        <FaInstagram /> Instagram
-      </button>
-      
-      {/* College Logo Button */}
-      <button className="college-logo-btn">College Logo</button>
-      
-      {/* Contact Number */}
-      <div className="contact-text">Contact: +123 456 7890</div>
-      
-      {/* Event Logo Button */}
-      <button className="event-logo-btn">Event Logo</button>
+    <div className="ending-box">
+      <h2 className="ending-box-heading">Contact Us</h2>
+      <div className="image-containerlo">
+        <img
+          src={image} // Replace with your image URL
+          alt="Contact"
+          className="ending-box-image"
+        />
+      </div>
     </div>
   );
 };
 
-export default SocialBox;
+export default EndingBox;

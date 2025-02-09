@@ -1,44 +1,34 @@
-import React, { useEffect } from 'react';
-import video from './videos/tech11.mp4';
+import React, { useState, useEffect } from 'react';
+import laptopVideo from './videos/tech11.mp4';
+import mobileVideo from './videos/mob-earth.mp4';
 import './App.css'; // Import your CSS file
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   useEffect(() => {
-    const handleScroll = (event) => {
-      // Prevent the default scroll behavior
-      event.preventDefault();
-
-      // Adjust the scroll speed (e.g., reduce it by a factor of 10)
-      const scrollSpeed = 0.01;
-      window.scrollBy(0, event.deltaY * scrollSpeed);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
     };
 
-    // Add the scroll event listener
-    window.addEventListener('wheel', handleScroll, { passive: false });
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh', position: 'relative' }}>
-      <div style={{ height: '5vh', backgroundColor: 'black' }}>
-        {/* <h1>Scroll Down to Play the Video</h1> */}
-      </div>
-
       <video
-        src={video}
+        src={isMobile ? mobileVideo : laptopVideo}
         autoPlay
         loop
-        muted // Optionally mute the video
+        muted
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100vh',
+          objectFit: 'cover',
         }}
       />
     </div>
